@@ -1,0 +1,13 @@
+
+This document contains steps to run this application.
+
+1. First let's create the database and tables by running the script in this file: Creating Database & Database Tables.sql
+2. Create the stored procedure that will be used to pull data from the database from a file: pr_GetCustomers.sql
+3. Open project CustomerServer in Visual Studio
+	- Change the connection string in App.config to any database of your choice
+	- Run the application (This is a Console application so it just prompt for date of birth)
+4. Open project CustomersApp and run the application 
+	- This is a windows application so it should wait for the console application to send list of customers resulted from the stored procedure executed
+	- Please Enter date of birth on Console application to see the resultset in the windows application
+
+End.. Thank You!!
