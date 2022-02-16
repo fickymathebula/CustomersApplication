@@ -28,30 +28,42 @@ namespace CustomerServer
 
         private static byte[] GetCustomers(string dateofbirth)
         {
+
             // This list will collect set of results
             List<Customer> customerList = new List<Customer>();
 
-            using (SqlConnection con = new SqlConnection(constring))
+            try
             {
-                // Create a new SqlCommand object
-                using (SqlCommand command = new SqlCommand("pr_GetCustomers", con))
+                Convert.ToDateTime(dateofbirth).ToString("dd-MM-yyyy");
+
+                using (SqlConnection con = new SqlConnection(constring))
                 {
-                    // Setup command as stored procedure and setup parameter
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@dateofbirth", dateofbirth);
-
-                    // Open connection if its closed
-                    if (con.State == ConnectionState.Closed)
-                        con.Open();
-                    SqlDataReader reader = command.ExecuteReader();
-
-                    while(reader.Read())
+                    // Create a new SqlCommand object
+                    using (SqlCommand command = new SqlCommand("pr_GetCustomers", con))
                     {
-                        // Load results set to the generic list
-                        customerList.Add(new Customer { Id = (int)reader.GetInt32("Id"), Name = reader.GetString("Name"), DateOfBirth = (DateTime)reader.GetDateTime("DateOfBirth") });
-                    }                    
+                        // Setup command as stored procedure and setup parameter
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@dateofbirth", dateofbirth);
+
+                        // Open connection if its closed
+                        if (con.State == ConnectionState.Closed)
+                            con.Open();
+                        SqlDataReader reader = command.ExecuteReader();
+
+                        while (reader.Read())
+                        {
+                            // Load results set to the generic list
+                            customerList.Add(new Customer { Id = (int)reader.GetInt32("Id"), Name = reader.GetString("Name"), DateOfBirth = (DateTime)reader.GetDateTime("DateOfBirth") });
+                        }
+                    }
                 }
             }
+            catch (Exception) 
+            {
+                Console.WriteLine("Invalid Input!");
+
+            }
+            
 
             // Lets convert the results list into byte array so we can send to client
             var obj = System.Text.Json.JsonSerializer.Serialize(customerList);

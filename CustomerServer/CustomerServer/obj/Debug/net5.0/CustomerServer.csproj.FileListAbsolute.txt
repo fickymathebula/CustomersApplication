@@ -35,7 +35,6 @@ C:\Users\Ficky Mathebula\Documents\Customers\CustomerServer\CustomerServer\obj\D
 C:\Users\Ficky Mathebula\Documents\Customers\CustomerServer\CustomerServer\obj\Debug\net5.0\ref\CustomerServer.dll
 C:\Users\Ficky Mathebula\Documents\Customers\CustomerServer\CustomerServer\obj\Debug\net5.0\CustomerServer.pdb
 C:\Users\Ficky Mathebula\Documents\Customers\CustomerServer\CustomerServer\obj\Debug\net5.0\CustomerServer.genruntimeconfig.cache
-C:\Users\Ficky Mathebula\Documents\CustomersApplication\CustomerServer\CustomerServer\obj\Debug\net5.0\CustomerServer.csproj.AssemblyReference.cache
 C:\Users\Ficky Mathebula\Documents\CustomersApplication\CustomerServer\CustomerServer\obj\Debug\net5.0\CustomerServer.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Ficky Mathebula\Documents\CustomersApplication\CustomerServer\CustomerServer\obj\Debug\net5.0\CustomerServer.AssemblyInfoInputs.cache
 C:\Users\Ficky Mathebula\Documents\CustomersApplication\CustomerServer\CustomerServer\obj\Debug\net5.0\CustomerServer.AssemblyInfo.cs
